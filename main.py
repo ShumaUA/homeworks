@@ -731,3 +731,20 @@
 
 
 
+def degree_of(number: int, degree: int) -> int:
+    if degree == 1:
+        return number
+
+    return number * degree_of(number, degree - 1)
+
+try:
+    number = int(input("Enter number: "))
+    degree = int(input("Enter degree of: "))
+
+
+    print()
+    print(f"The number {number} to the power of {degree} is:", degree_of(number, degree), end=".")
+    print()
+
+except Exception as err:
+    print("Enter integer number")
