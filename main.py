@@ -755,15 +755,34 @@
 
 
 
-def printer_stars(number: int) -> str:
-    if number == 1:
-        return print("*")
+# def printer_stars(number: int) -> str:
+#     if number == 1:
+#         return print("*")
+#
+#     if number > 1:
+#         print(end="*")
+#
+#     return printer_stars(number - 1)
+#
+#
+# number = int(input("Enter number of stars:"))
+# printer_stars(number)
 
-    if number > 1:
-        print(end="*")
-
-    return printer_stars(number - 1)
 
 
-number = int(input("Enter number of stars:"))
-printer_stars(number)
+# ################################### task_7_3 ###############################################
+
+
+
+def sum_a_b(a: int, b: int) -> int:
+    if a == b:
+        return b
+    return b + sum_a_b(a, b - 1)
+
+
+print()
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print(f"\nThe sum of numbers between {a} and {b} is:", sum_a_b(a, b), end=".")
+print()
+
