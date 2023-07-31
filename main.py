@@ -731,20 +731,39 @@
 
 
 
-def degree_of(number: int, degree: int) -> int:
-    if degree == 1:
-        return number
+# def degree_of(number: int, degree: int) -> int:
+#     if degree == 1:
+#         return number
+#
+#     return number * degree_of(number, degree - 1)
+#
+# try:
+#     number = int(input("Enter number: "))
+#     degree = int(input("Enter degree of: "))
+#
+#
+#     print()
+#     print(f"The number {number} to the power of {degree} is:", degree_of(number, degree), end=".")
+#     print()
+#
+# except Exception as err:
+#     print("Enter integer number")
 
-    return number * degree_of(number, degree - 1)
-
-try:
-    number = int(input("Enter number: "))
-    degree = int(input("Enter degree of: "))
 
 
-    print()
-    print(f"The number {number} to the power of {degree} is:", degree_of(number, degree), end=".")
-    print()
+# ################################### task_7_2 ###############################################
 
-except Exception as err:
-    print("Enter integer number")
+
+
+def printer_stars(number: int) -> str:
+    if number == 1:
+        return print("*")
+
+    if number > 1:
+        print(end="*")
+
+    return printer_stars(number - 1)
+
+
+number = int(input("Enter number of stars:"))
+printer_stars(number)
