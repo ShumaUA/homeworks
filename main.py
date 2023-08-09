@@ -804,11 +804,43 @@ email (наявність @, домену: gmail.com наприклад, мін�
 ################################### for_all_task ###############################################
 
 import re
-test_text = ["Ivanov Iv3an Ivanovich", "Ivanov Ivan Ivan4ovich", "Iva3nov Ivan Ivanovich", "Petrov Ivan Ivanovich", "0671111111", "380672222222", "+380673333333", "+380674444444", "11111a", "1111df1", "11111", "222222", "3333333", "44444444", "a.b@g.com", "ab@g.com", "a_b@g.com", "A_B@g.com", "1@1.com", "a+b@g.com", "", "qqq.com"]
-
+test_text = '''
+Ivanov Iv3an Ivanovich, Ivanov Ivan Ivan4ovich, Iva3nov Ivan Ivanovich, Petrov Ivan Ivanovich, 0671111111, +380(67)222-22-22, 80673333333, +380674444444, 11111a, 1111df1, 11111, 222222, 3333333, 44444444, .a.b@g.com, a.b@g.com, ab@g.com, a_b@g.com, _A_B@g.com, A_B@g.com, 1@1.com, a+b@g.com, "", qqq.com
+'''
+print(test_text)
 
 
 # ################################### task_8_1 ###############################################
 
+pattern_home_numbers = r"\d{5,8}"
+home_number = re.findall(pattern_home_numbers, test_text)
+print(home_number)
 
 
+# ################################### task_8_2 ###############################################
+
+
+
+pattern_mobil_numbers = r"(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})"
+mobile_number = re.findall(pattern_mobil_numbers, test_text)
+print(mobile_number)
+
+
+
+# ################################### task_8_3 ###############################################
+
+
+
+pattern_email = r"[_.A-Za-z]+[._A-Za-z]+@[A-Za-z]+[.][A-Za-z]{2,}"
+emails = re.findall(pattern_email, test_text)
+print(emails)
+
+
+
+# ################################### task_8_4 ###############################################
+
+
+
+pattern_fio = r"([A-Z][a-z]+\s[A-Z][a-z]+\s[A-Z][a-z]{2,20})"
+fio = re.findall(pattern_fio, test_text)
+print(fio)
