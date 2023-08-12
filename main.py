@@ -803,27 +803,27 @@ email (наявність @, домену: gmail.com наприклад, мін�
 
 ################################### for_all_task ###############################################
 
-import re
-test_text = '''
-Ivanov Iv3an Ivanovich, Ivanov Ivan Ivan4ovich, Iva3nov Ivan Ivanovich, Petrov Ivan Ivanovich, 0671111111, +380(67)222-22-22, 80673333333, +380674444444, 11111a, 1111df1, 11111, 222222, 3333333, 44444444, .a.b@g.com, a.b@g.com, ab@g.com, a_b@g.com, _A_B@g.com, A_B@g.com, 1@1.com, a+b@g.com, "", qqq.com
-'''
-print(test_text)
+# import re
+# test_text = '''
+# Ivanov Iv3an Ivanovich, Ivanov Ivan Ivan4ovich, Iva3nov Ivan Ivanovich, Petrov Ivan Ivanovich, 0671111111, +380(67)222-22-22, 80673333333, +380674444444, 11111a, 1111df1, 11111, 222222, 3333333, 44444444, .a.b@g.com, a.b@g.com, ab@g.com, a_b@g.com, _A_B@g.com, A_B@g.com, 1@1.com, a+b@g.com, "", qqq.com
+# '''
+# print(test_text)
 
 
 # ################################### task_8_1 ###############################################
 
-pattern_home_numbers = r"\d{5,8}"
-home_number = re.findall(pattern_home_numbers, test_text)
-print(home_number)
+# pattern_home_numbers = r"\d{5,8}"
+# home_number = re.findall(pattern_home_numbers, test_text)
+# print(home_number)
 
 
 # ################################### task_8_2 ###############################################
 
 
 
-pattern_mobil_numbers = r"(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})"
-mobile_number = re.findall(pattern_mobil_numbers, test_text)
-print(mobile_number)
+# pattern_mobil_numbers = r"(\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9})"
+# mobile_number = re.findall(pattern_mobil_numbers, test_text)
+# print(mobile_number)
 
 
 
@@ -831,9 +831,9 @@ print(mobile_number)
 
 
 
-pattern_email = r"[_.A-Za-z]+[._A-Za-z]+@[A-Za-z]+[.][A-Za-z]{2,}"
-emails = re.findall(pattern_email, test_text)
-print(emails)
+# pattern_email = r"[_.A-Za-z]+[._A-Za-z]+@[A-Za-z]+[.][A-Za-z]{2,}"
+# emails = re.findall(pattern_email, test_text)
+# print(emails)
 
 
 
@@ -841,6 +841,47 @@ print(emails)
 
 
 
-pattern_fio = r"([A-Z][a-z]+\s[A-Z][a-z]+\s[A-Z][a-z]{2,20})"
-fio = re.findall(pattern_fio, test_text)
-print(fio)
+# pattern_fio = r"([A-Z][a-z]+\s[A-Z][a-z]+\s[A-Z][a-z]{2,20})"
+# fio = re.findall(pattern_fio, test_text)
+# print(fio)
+
+
+
+
+################################### homework_9 ###############################################
+
+
+
+'''
+1. Даний текстовий файл. Необхідно створити новий файл, який потрібно переписати з першого файлу всі слова, що складаються не менше ніж з семи літер.
+2. Даний текстовий файл. Підрахувати кількість слів у ньому.
+'''
+
+
+
+# ################################### task_9_1 ###############################################
+
+
+
+# with open("text.txt", "r") as in_file:
+#     with open("new_text.txt", "w") as out_file:
+#         for i in in_file:
+#             temp_word = i.split()
+#             long_word = [word for word in temp_word if len(word) >= 7]
+#             out_file.write(" ".join(long_word) + "\n")
+
+
+
+# ################################### task_9_2 ###############################################
+
+
+
+# with open("text.txt", "r") as in_file:
+#
+#     text_in = in_file.read()
+#     all_words = text_in.split()
+#     count_words = len(all_words)
+#
+#     print()
+#     print(f"Number of words in the file: {count_words}", end=".")
+#     print()
